@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block site_title %}
+{% endblock %}
+{% block content %}
+    <form class="form-horizontal" id="MachineForm" role="form" method="POST" action="">
+       <h2>Edytuj maszynę</h2>
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type="submit" class="btn btn-dark" form="MachineForm">Zapisz</button>
+    </form>
+{% endblock %}

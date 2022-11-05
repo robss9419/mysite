@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block site_title %}
+
+{% endblock %}
+
+{% block content %}
+        <div class="container-fluid" align="center">
+            <hr>
+              <table class="table table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Kod maszyny</th>
+                      <th scope="col">Motogodziny</th>
+                      <th scope="col">Typ serwisu</th>
+                      <th scope="col">Data utworzenia</th>
+                      <th scope="col">Utworzony przez</th>
+                      <th class="text-right" scope="col">Operacja</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for report in reports %}
+                    <tr>
+                      <td>{{ report.machine }}</td>
+                      <td>{{ report.mth }}</td>
+                      <td>{{ report.service_type }}</td>
+                      <td>{{ report.date_created }}</td>
+                      <td>{{ report.owner }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+        </div>
+        <hr>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block site_title %}
+
+{% endblock %}
+
+{% block content %}
+        <div class="container-fluid" align="center">
+            <hr>
+              <table class="table table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Kategoria</th>
+                      <th scope="col">Nazwa</th>
+                      <th scope="col">KOD</th>
+                      <th class="text-right" scope="col">Operacja</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Lista maszyn -->
+                    {% for machine in machine_list %}
+                    <tr>
+                      <th scope="row">{{ forloop.counter }}</th>
+                      <td>{{ machine.category }}</td>
+                      <td>{{ machine.name }}</td>
+                      <td>{{ machine.code }}</td>
+                      <td class="text-right">
+
+                      <a href="{% url 'machine-detail' machine.id %}" class="btn btn-dark btn-sm">Pokaż</a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+        </div>
+        <hr>
+{% endblock %}

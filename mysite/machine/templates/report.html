@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block site_title %}
+    <h4>
+        Raport nr {{ report.id }}
+    </h4>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <p>
+                <strong>Maszyna: </strong>{{ report.machine}}
+                <br />
+                <strong>Motogodziny: </strong>{{ report.mth }}
+                <br />
+                <strong>Typ serwisu: </strong>{{ report.service_type }}
+                <br />
+                <strong>Data utworzenia: </strong>{{ report.date_created }}
+                <br />
+            </p>
+    </div>
+
+{% endblock %}

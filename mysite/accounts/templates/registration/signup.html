@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+    <!-- Etykieta strony -->
+{% block site_title %}
+{% endblock %}
+    <!-- Zawartość strony -->
+{% block content %}
+    <form class="form-horizontal" id="loginForm" role="form" method="POST" action="{% url 'signup' %}">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Utwórz nowe konto</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-dark" form="loginForm">Utwórz konto</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

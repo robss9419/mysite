@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block site_title %}
+{% endblock %}
+{% block content %}
+    <form class="form-horizontal" id="MachineForm" role="form" method="POST" action="">
+            <div class="container-fluid">
+                <h2>Utwórz nową maszynę</h2>
+                <hr>
+            </div>
+            <div class="container-fluid">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+            <div class="container-fluid">
+                <button type="submit" class="btn btn-dark" form="MachineForm">Utwórz</button>
+            </div>
+    </form>
+{% endblock %}
